@@ -31,18 +31,36 @@ namespace pos409_exam_questions
             //string[] chapterNames = { "W2Ch3", "W2Ch4", "W2Ch5", "W2Ch8", "W3Ch6", "W3Ch7", "W4Ch9", "W4Ch10", "W5Ch11", "W5Ch12"};
             //int[] chapterCounts = {15,13,14,20,21, 10,20,13,14,10};
 
-            //int student = 0;
+            int student = 0;
 
-            //txtAssignment.Text = "";
-            //for (int i = 0; i < chapterNames.Length; i++)
+            txtAssignment.Text = "";
+            for (int i = 0; i < lstChaptersD.Items.Count; i++)
+            {
+                for (int j = 0; j < int.Parse(lstChaptersQ.Items[i].ToString()); j++)
+                {
+                    txtAssignment.Text += lstStudents.Items[student] + ": " + lstChaptersD.Items[i] + " Question " + (j + 1).ToString() + Environment.NewLine;
+                    student++;
+                    student = student % lstStudents.Items.Count;
+                }
+                //Console.WriteLine(lstChaptersQ.Items[i]);
+
+                
+
+            }
+
+            //string str = "";
+
+
+            //foreach (string s in lstStudents.Items)
             //{
-            //    for (int j = 0; j < chapterCounts[i]; j++)
-            //    {
-            //        txtAssignment.Text += "Student " + (student+1).ToString() + ": " + chapterNames[i] + " Question " + (j+1).ToString() + Environment.NewLine;
-            //        student++;
-            //        //student = student % tbrStudents.Value;
-            //    }
+            //    Console.WriteLine(s);
             //}
+            //Console.WriteLine(lstChaptersD.Items.Count);
+            
+            
+            //lstStudents.Items
+
+
         }
 
 
